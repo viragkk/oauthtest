@@ -175,6 +175,12 @@
       "value" : [ {
         "type" : "STRING",
         "precision" : 10,
+        "scale" : 2,
+        "field" : "a"
+      }, {
+        "field" : "b",
+        "type" : "STRING",
+        "precision" : 10,
         "scale" : 2
       } ]
     }, {
@@ -201,7 +207,7 @@
     } ],
     "uiInfo" : {
       "outputStreamLabels" : null,
-      "yPos" : 50,
+      "yPos" : 49,
       "stageType" : "SOURCE",
       "rawSource" : null,
       "description" : "",
@@ -220,7 +226,7 @@
     "configuration" : [ ],
     "uiInfo" : {
       "outputStreamLabels" : null,
-      "yPos" : 50,
+      "yPos" : 49,
       "stageType" : "TARGET",
       "rawSource" : null,
       "description" : "",
@@ -269,11 +275,11 @@
     "sdcId" : "f086bda9-d7b3-11e8-aa64-0566b2af860a"
   },
   "metadata" : {
-    "dpm.pipeline.rules.id" : "5b2b3333-b7ae-4723-a3f0-200ff46ff358:test",
+    "dpm.pipeline.rules.id" : "7788f1e3-4966-49fe-8a09-d536700cc2fe:test",
     "dpm.pipeline.id" : "2ae5bf6a-a505-4ffa-a2ce-bf12cd1f7b60:test",
     "dpm.base.url" : "http://localhost:18631",
-    "dpm.pipeline.version" : "3",
-    "dpm.pipeline.commit.id" : "ab9a67bb-2b1c-408a-aa08-c1b285c980e6:test"
+    "dpm.pipeline.version" : "4",
+    "dpm.pipeline.commit.id" : "ec2cab97-b663-4b51-a764-78e0225d0846:test"
   },
   "statsAggregatorStage" : {
     "instanceName" : "statsAggregatorStageInstance",
