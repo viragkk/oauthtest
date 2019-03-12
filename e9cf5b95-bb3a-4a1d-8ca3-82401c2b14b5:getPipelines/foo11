@@ -1,0 +1,17 @@
+{
+"pipelineConfig": {
+  "pipeline" : "PIPELINE",
+  "metadata" : {
+    "dpm.pipeline.rules.id" : "112f614f-92c6-4013-ac57-ed8f683c7821:getPipelines",
+    "dpm.pipeline.id" : "e9cf5b95-bb3a-4a1d-8ca3-82401c2b14b5:getPipelines",
+    "dpm.base.url" : "http://localhost:18631",
+    "dpm.pipeline.commit.id" : "77149f75-03c2-4fec-a4ff-278b1391b2ec:getPipelines",
+    "dpm.pipeline.version" : "2"
+  },
+  "newValue" : 1552371887011
+},
+"pipelineRules": {
+  "rules" : "RULES"
+},
+"libraryDefinitions": libDefs
+}
