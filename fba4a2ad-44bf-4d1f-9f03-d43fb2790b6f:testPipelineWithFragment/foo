@@ -1,0 +1,549 @@
+{
+"pipelineConfig": {
+  "schemaVersion" : 5,
+  "version" : 9,
+  "pipelineId" : "sample",
+  "uuid" : "ce1358a2-d8b2-49b6-b10d-53c46f7a54c1",
+  "title" : "sample",
+  "description" : "",
+  "configuration" : [ {
+    "name" : "executionMode",
+    "value" : "STANDALONE"
+  }, {
+    "name" : "edgeHttpUrl",
+    "value" : "http://localhost:18633"
+  }, {
+    "name" : "deliveryGuarantee",
+    "value" : "AT_LEAST_ONCE"
+  }, {
+    "name" : "startEventStage",
+    "value" : "streamsets-datacollector-basic-lib::com_streamsets_pipeline_stage_destination_devnull_ToErrorNullDTarget::1"
+  }, {
+    "name" : "stopEventStage",
+    "value" : "streamsets-datacollector-basic-lib::com_streamsets_pipeline_stage_destination_devnull_ToErrorNullDTarget::1"
+  }, {
+    "name" : "shouldRetry",
+    "value" : true
+  }, {
+    "name" : "retryAttempts",
+    "value" : -1
+  }, {
+    "name" : "memoryLimit",
+    "value" : "${jvm:maxMemoryMB() * 0.85}"
+  }, {
+    "name" : "memoryLimitExceeded",
+    "value" : "LOG"
+  }, {
+    "name" : "notifyOnStates",
+    "value" : [ "RUN_ERROR", "STOPPED", "FINISHED" ]
+  }, {
+    "name" : "emailIDs",
+    "value" : [ ]
+  }, {
+    "name" : "constants",
+    "value" : [ ]
+  }, {
+    "name" : "badRecordsHandling",
+    "value" : "streamsets-datacollector-basic-lib::com_streamsets_pipeline_stage_destination_devnull_ToErrorNullDTarget::1"
+  }, {
+    "name" : "errorRecordPolicy",
+    "value" : "ORIGINAL_RECORD"
+  }, {
+    "name" : "workerCount",
+    "value" : 0
+  }, {
+    "name" : "clusterSlaveMemory",
+    "value" : 2048
+  }, {
+    "name" : "clusterSlaveJavaOpts",
+    "value" : "-XX:+UseConcMarkSweepGC -XX:+UseParNewGC -Dlog4j.debug"
+  }, {
+    "name" : "clusterLauncherEnv",
+    "value" : [ ]
+  }, {
+    "name" : "mesosDispatcherURL",
+    "value" : null
+  }, {
+    "name" : "hdfsS3ConfDir",
+    "value" : null
+  }, {
+    "name" : "rateLimit",
+    "value" : 0
+  }, {
+    "name" : "maxRunners",
+    "value" : 0
+  }, {
+    "name" : "shouldCreateFailureSnapshot",
+    "value" : true
+  }, {
+    "name" : "runnerIdleTIme",
+    "value" : 60
+  }, {
+    "name" : "webhookConfigs",
+    "value" : [ ]
+  }, {
+    "name" : "sparkConfigs",
+    "value" : [ ]
+  }, {
+    "name" : "statsAggregatorStage",
+    "value" : ""
+  } ],
+  "uiInfo" : { },
+  "stages" : [ {
+    "instanceName" : "DevDataGenerator_01",
+    "library" : "streamsets-datacollector-dev-lib",
+    "stageName" : "com_streamsets_pipeline_stage_devtest_RandomDataGeneratorSource",
+    "stageVersion" : "5",
+    "configuration" : [ {
+      "name" : "dataGenConfigs",
+      "value" : [ {
+        "type" : "STRING",
+        "precision" : 10,
+        "scale" : 2
+      } ]
+    }, {
+      "name" : "rootFieldType",
+      "value" : "MAP"
+    }, {
+      "name" : "headerAttributes",
+      "value" : [ ]
+    }, {
+      "name" : "delay",
+      "value" : 1000
+    }, {
+      "name" : "batchSize",
+      "value" : 1000
+    }, {
+      "name" : "numThreads",
+      "value" : 1
+    }, {
+      "name" : "eventName",
+      "value" : "generated-event"
+    }, {
+      "name" : "stageOnRecordError",
+      "value" : "TO_ERROR"
+    } ],
+    "services" : [ ],
+    "uiInfo" : {
+      "outputStreamLabels" : null,
+      "yPos" : 50,
+      "stageType" : "SOURCE",
+      "rawSource" : null,
+      "description" : "",
+      "label" : "Dev Data Generator 1",
+      "xPos" : 60
+    },
+    "inputLanes" : [ ],
+    "outputLanes" : [ "DevDataGenerator_01OutputLane15247689216530" ],
+    "eventLanes" : [ ]
+  }, {
+    "instanceName" : "fragment1_01_FragmentProcessor_01",
+    "library" : "streamsets-datacollector-basic-lib",
+    "stageName" : "com_streamsets_pipeline_stage_processor_fragment_FragmentProcessor",
+    "stageVersion" : "1",
+    "configuration" : [ {
+      "name" : "conf.fragmentId",
+      "value" : "fragment1aa7ad856-00a6-49fb-8f0d-d593f052d01a"
+    }, {
+      "name" : "conf.fragmentInstanceId",
+      "value" : "fragment1_01"
+    } ],
+    "services" : [ ],
+    "uiInfo" : {
+      "yPos" : 50,
+      "stageType" : "PROCESSOR",
+      "rawSource" : null,
+      "pipelineCommitLabel" : "v1",
+      "description" : "",
+      "firstStageInstanceName" : "DevIdentity_01",
+      "label" : "fragment1",
+      "xPos" : 280,
+      "fragmentGroupStage" : true,
+      "pipelineId" : "94936068-3710-478a-bf80-956e3bfa90c3:testPipelineWithFragment",
+      "outputStreamLabels" : null,
+      "fragmentName" : "fragment1",
+      "fragmentId" : "fragment1aa7ad856-00a6-49fb-8f0d-d593f052d01a",
+      "fragmentInstanceId" : "fragment1_01",
+      "pipelineCommitId" : "2f25490b-08e8-4a75-9176-09a85e0a8c5b:testPipelineWithFragment"
+    },
+    "inputLanes" : [ "DevDataGenerator_01OutputLane15247689216530" ],
+    "outputLanes" : [ "fragment1_01_DevIdentity_02OutputLane15247688999700" ],
+    "eventLanes" : [ ]
+  }, {
+    "instanceName" : "Trash_01",
+    "library" : "streamsets-datacollector-basic-lib",
+    "stageName" : "com_streamsets_pipeline_stage_destination_devnull_NullDTarget",
+    "stageVersion" : "1",
+    "configuration" : [ ],
+    "services" : [ ],
+    "uiInfo" : {
+      "outputStreamLabels" : null,
+      "yPos" : 50,
+      "stageType" : "TARGET",
+      "rawSource" : null,
+      "description" : "",
+      "label" : "Trash 1",
+      "xPos" : 500
+    },
+    "inputLanes" : [ "fragment1_01_DevIdentity_02OutputLane15247688999700" ],
+    "outputLanes" : [ ],
+    "eventLanes" : [ ]
+  } ],
+  "errorStage" : {
+    "instanceName" : "Discard_ErrorStage",
+    "library" : "streamsets-datacollector-basic-lib",
+    "stageName" : "com_streamsets_pipeline_stage_destination_devnull_ToErrorNullDTarget",
+    "stageVersion" : "1",
+    "configuration" : [ ],
+    "services" : [ ],
+    "uiInfo" : {
+      "outputStreamLabels" : null,
+      "yPos" : 50,
+      "stageType" : "TARGET",
+      "rawSource" : null,
+      "description" : "",
+      "label" : "Error Records - Discard",
+      "xPos" : 720
+    },
+    "inputLanes" : [ ],
+    "outputLanes" : [ ],
+    "eventLanes" : [ ]
+  },
+  "testOriginStage" : null,
+  "info" : {
+    "name" : "sample",
+    "pipelineId" : "sample",
+    "title" : "sample",
+    "description" : "",
+    "created" : 1524769045667,
+    "lastModified" : 1524769045703,
+    "creator" : "demo@demo",
+    "lastModifier" : "demo@demo",
+    "lastRev" : "0",
+    "uuid" : "ce1358a2-d8b2-49b6-b10d-53c46f7a54c1",
+    "valid" : true,
+    "metadata" : {
+      "dpm.pipeline.rules.id" : "eb2a3600-5e00-4716-82f9-0062a6afb26c:demo",
+      "dpm.pipeline.id" : "fba4a2ad-44bf-4d1f-9f03-d43fb2790b6f:demo",
+      "dpm.base.url" : "http://localhost:18631",
+      "dpm.pipeline.version" : "1",
+      "dpm.pipeline.commit.id" : "f9acfdd3-151b-416e-a345-1963518db8ca:demo",
+      "lastConfigId" : "ce1358a2-d8b2-49b6-b10d-53c46f7a54c1",
+      "lastRulesId" : "fca10806-92d0-4509-a5fa-314b06b611c7"
+    },
+    "sdcVersion" : "3.3.0.0-SNAPSHOT",
+    "sdcId" : "87ebafcd-4963-11e8-b41f-5556fd9bb633"
+  },
+  "issues" : {
+    "pipelineIssues" : [ ],
+    "stageIssues" : { },
+    "issueCount" : 0
+  },
+  "valid" : true,
+  "previewable" : true,
+  "statsAggregatorStage" : null,
+  "metadata" : {
+    "dpm.pipeline.rules.id" : "eb2a3600-5e00-4716-82f9-0062a6afb26c:testPipelineWithFragment",
+    "dpm.pipeline.id" : "fba4a2ad-44bf-4d1f-9f03-d43fb2790b6f:testPipelineWithFragment",
+    "dpm.base.url" : "http://localhost:18631",
+    "dpm.pipeline.version" : "1",
+    "dpm.pipeline.commit.id" : "f9acfdd3-151b-416e-a345-1963518db8ca:testPipelineWithFragment",
+    "lastConfigId" : "ce1358a2-d8b2-49b6-b10d-53c46f7a54c1",
+    "lastRulesId" : "fca10806-92d0-4509-a5fa-314b06b611c7"
+  },
+  "startEventStages" : [ {
+    "instanceName" : "Discard_StartEventStage",
+    "library" : "streamsets-datacollector-basic-lib",
+    "stageName" : "com_streamsets_pipeline_stage_destination_devnull_ToErrorNullDTarget",
+    "stageVersion" : "1",
+    "configuration" : [ ],
+    "services" : [ ],
+    "uiInfo" : {
+      "outputStreamLabels" : null,
+      "yPos" : 50,
+      "stageType" : "TARGET",
+      "rawSource" : null,
+      "description" : "",
+      "label" : "Start Event - Discard",
+      "xPos" : 280
+    },
+    "inputLanes" : [ ],
+    "outputLanes" : [ ],
+    "eventLanes" : [ ]
+  } ],
+  "stopEventStages" : [ {
+    "instanceName" : "Discard_StopEventStage",
+    "library" : "streamsets-datacollector-basic-lib",
+    "stageName" : "com_streamsets_pipeline_stage_destination_devnull_ToErrorNullDTarget",
+    "stageVersion" : "1",
+    "configuration" : [ ],
+    "services" : [ ],
+    "uiInfo" : {
+      "outputStreamLabels" : null,
+      "yPos" : 50,
+      "stageType" : "TARGET",
+      "rawSource" : null,
+      "description" : "",
+      "label" : "Stop Event - Discard",
+      "xPos" : 280
+    },
+    "inputLanes" : [ ],
+    "outputLanes" : [ ],
+    "eventLanes" : [ ]
+  } ],
+  "fragments" : [ {
+    "schemaVersion" : 5,
+    "version" : 1,
+    "fragmentId" : "fragment1aa7ad856-00a6-49fb-8f0d-d593f052d01a",
+    "fragmentInstanceId" : "fragment1_01",
+    "uuid" : "a5fd7812-94ff-4cf0-9834-017a947a370b",
+    "title" : "fragment1",
+    "description" : "",
+    "configuration" : [ {
+      "name" : "executionMode",
+      "value" : "STANDALONE"
+    }, {
+      "name" : "constants",
+      "value" : [ ]
+    } ],
+    "uiInfo" : {
+      "fragmentStageConfiguration" : {
+        "instanceName" : "FragmentProcessor_01",
+        "library" : "streamsets-datacollector-basic-lib",
+        "stageName" : "com_streamsets_pipeline_stage_processor_fragment_FragmentProcessor",
+        "stageVersion" : "1",
+        "configuration" : [ {
+          "name" : "conf.fragmentId"
+        }, {
+          "name" : "conf.fragmentInstanceId"
+        } ],
+        "uiInfo" : {
+          "label" : "Fragment Processor 1",
+          "description" : "",
+          "xPos" : 720,
+          "yPos" : 50,
+          "stageType" : "PROCESSOR",
+          "outputStreamLabels" : null,
+          "rawSource" : null,
+          "firstStageInstanceName" : "DevIdentity_01"
+        },
+        "inputLanes" : [ ],
+        "outputLanes" : [ "DevIdentity_02OutputLane15247688999700" ],
+        "eventLanes" : [ ],
+        "services" : [ ]
+      }
+    },
+    "stages" : [ {
+      "instanceName" : "fragment1_01_DevIdentity_01",
+      "library" : "streamsets-datacollector-dev-lib",
+      "stageName" : "com_streamsets_pipeline_stage_processor_identity_IdentityProcessor",
+      "stageVersion" : "1",
+      "configuration" : [ {
+        "name" : "stageOnRecordError",
+        "value" : "TO_ERROR"
+      }, {
+        "name" : "stageRequiredFields",
+        "value" : [ ]
+      }, {
+        "name" : "stageRecordPreconditions",
+        "value" : [ ]
+      } ],
+      "services" : [ ],
+      "uiInfo" : {
+        "outputStreamLabels" : null,
+        "yPos" : 50,
+        "stageType" : "PROCESSOR",
+        "rawSource" : null,
+        "fragmentId" : "fragment1aa7ad856-00a6-49fb-8f0d-d593f052d01a",
+        "description" : "",
+        "label" : "Dev Identity 1",
+        "xPos" : 60,
+        "fragmentInstanceId" : "fragment1_01"
+      },
+      "inputLanes" : [ "DevDataGenerator_01OutputLane15247689216530" ],
+      "outputLanes" : [ "fragment1_01_DevIdentity_01OutputLane15247688991620" ],
+      "eventLanes" : [ ]
+    }, {
+      "instanceName" : "fragment1_01_DevRandomError_01",
+      "library" : "streamsets-datacollector-dev-lib",
+      "stageName" : "com_streamsets_pipeline_stage_devtest_RandomErrorProcessor",
+      "stageVersion" : "2",
+      "configuration" : [ {
+        "name" : "discardSomeRecords",
+        "value" : false
+      }, {
+        "name" : "stageOnRecordError",
+        "value" : "TO_ERROR"
+      }, {
+        "name" : "stageRequiredFields",
+        "value" : [ ]
+      }, {
+        "name" : "stageRecordPreconditions",
+        "value" : [ ]
+      } ],
+      "services" : [ ],
+      "uiInfo" : {
+        "outputStreamLabels" : null,
+        "yPos" : 50,
+        "stageType" : "PROCESSOR",
+        "rawSource" : null,
+        "fragmentId" : "fragment1aa7ad856-00a6-49fb-8f0d-d593f052d01a",
+        "description" : "",
+        "label" : "Dev Random Error 1",
+        "xPos" : 280,
+        "fragmentInstanceId" : "fragment1_01"
+      },
+      "inputLanes" : [ "fragment1_01_DevIdentity_01OutputLane15247688991620" ],
+      "outputLanes" : [ "fragment1_01_DevRandomError_01OutputLane15247688995780" ],
+      "eventLanes" : [ ]
+    }, {
+      "instanceName" : "fragment1_01_DevIdentity_02",
+      "library" : "streamsets-datacollector-dev-lib",
+      "stageName" : "com_streamsets_pipeline_stage_processor_identity_IdentityProcessor",
+      "stageVersion" : "1",
+      "configuration" : [ {
+        "name" : "stageOnRecordError",
+        "value" : "TO_ERROR"
+      }, {
+        "name" : "stageRequiredFields",
+        "value" : [ ]
+      }, {
+        "name" : "stageRecordPreconditions",
+        "value" : [ ]
+      } ],
+      "services" : [ ],
+      "uiInfo" : {
+        "outputStreamLabels" : null,
+        "yPos" : 50,
+        "stageType" : "PROCESSOR",
+        "rawSource" : null,
+        "fragmentId" : "fragment1aa7ad856-00a6-49fb-8f0d-d593f052d01a",
+        "description" : "",
+        "label" : "Dev Identity 2",
+        "xPos" : 500,
+        "fragmentInstanceId" : "fragment1_01"
+      },
+      "inputLanes" : [ "fragment1_01_DevRandomError_01OutputLane15247688995780" ],
+      "outputLanes" : [ "fragment1_01_DevIdentity_02OutputLane15247688999700" ],
+      "eventLanes" : [ ]
+    } ],
+    "info" : {
+      "name" : "fragment1aa7ad856-00a6-49fb-8f0d-d593f052d01a",
+      "pipelineId" : "fragment1aa7ad856-00a6-49fb-8f0d-d593f052d01a",
+      "title" : "fragment1",
+      "description" : "",
+      "created" : 1524768892095,
+      "lastModified" : 1524768892095,
+      "creator" : "demo@demo",
+      "lastModifier" : "demo@demo",
+      "lastRev" : "0",
+      "uuid" : "a5fd7812-94ff-4cf0-9834-017a947a370b",
+      "valid" : false,
+      "metadata" : null,
+      "sdcVersion" : "3.3.0.0-SNAPSHOT",
+      "sdcId" : "87ebafcd-4963-11e8-b41f-5556fd9bb633"
+    },
+    "issues" : {
+      "pipelineIssues" : [ ],
+      "stageIssues" : { },
+      "issueCount" : 0
+    },
+    "valid" : true,
+    "previewable" : false,
+    "metadata" : {
+      "dpm.pipeline.rules.id" : "f574f406-9caf-4ef5-b6b9-561e92d3835a:testPipelineWithFragment",
+      "dpm.pipeline.id" : "94936068-3710-478a-bf80-956e3bfa90c3:testPipelineWithFragment",
+      "dpm.base.url" : "http://localhost:18631",
+      "dpm.pipeline.version" : "1",
+      "dpm.pipeline.commit.id" : "2f25490b-08e8-4a75-9176-09a85e0a8c5b:testPipelineWithFragment",
+      "labels" : [ "Processors" ]
+    },
+    "fragments" : [ ],
+    "testOriginStage" : null
+  } ]
+},
+"pipelineRules": {
+  "schemaVersion" : null,
+  "version" : "2",
+  "metricsRuleDefinitions" : [ {
+    "id" : "badRecordsAlertID",
+    "alertText" : "High incidence of Error Records",
+    "metricId" : "pipeline.batchErrorRecords.counter",
+    "metricType" : "COUNTER",
+    "metricElement" : "COUNTER_COUNT",
+    "condition" : "${value() > 100}",
+    "sendEmail" : false,
+    "enabled" : false,
+    "valid" : true,
+    "timestamp" : 1524768914730
+  }, {
+    "id" : "stageErrorAlertID",
+    "alertText" : "High incidence of Stage Errors",
+    "metricId" : "pipeline.batchErrorMessages.counter",
+    "metricType" : "COUNTER",
+    "metricElement" : "COUNTER_COUNT",
+    "condition" : "${value() > 100}",
+    "sendEmail" : false,
+    "enabled" : false,
+    "valid" : true,
+    "timestamp" : 1524768914730
+  }, {
+    "id" : "idleGaugeID",
+    "alertText" : "Pipeline is Idle",
+    "metricId" : "RuntimeStatsGauge.gauge",
+    "metricType" : "GAUGE",
+    "metricElement" : "TIME_OF_LAST_RECEIVED_RECORD",
+    "condition" : "${time:now() - value() > 120000}",
+    "sendEmail" : false,
+    "enabled" : false,
+    "valid" : true,
+    "timestamp" : 1524768914730
+  }, {
+    "id" : "batchTimeAlertID",
+    "alertText" : "Batch taking more time to process",
+    "metricId" : "RuntimeStatsGauge.gauge",
+    "metricType" : "GAUGE",
+    "metricElement" : "CURRENT_BATCH_AGE",
+    "condition" : "${value() > 200}",
+    "sendEmail" : false,
+    "enabled" : false,
+    "valid" : true,
+    "timestamp" : 1524768914730
+  }, {
+    "id" : "memoryLimitAlertID",
+    "alertText" : "Memory limit for pipeline exceeded",
+    "metricId" : "pipeline.memoryConsumed.counter",
+    "metricType" : "COUNTER",
+    "metricElement" : "COUNTER_COUNT",
+    "condition" : "${value() > (jvm:maxMemoryMB() * 0.65)}",
+    "sendEmail" : false,
+    "enabled" : false,
+    "valid" : true,
+    "timestamp" : 1524768914730
+  } ],
+  "dataRuleDefinitions" : [ ],
+  "driftRuleDefinitions" : [ ],
+  "emailIds" : [ ],
+  "uuid" : "fca10806-92d0-4509-a5fa-314b06b611c7",
+  "ruleIssues" : [ ],
+  "configuration" : [ {
+    "name" : "emailIDs",
+    "value" : [ ]
+  }, {
+    "name" : "webhookConfigs",
+    "value" : [ ]
+  } ],
+  "configIssues" : [ ]
+},
+"libraryDefinitions": {
+  "pipeline" : [ ],
+  "pipelineFragment" : null,
+  "pipelineRules" : [ ],
+  "stages" : [ ],
+  "services" : [ ],
+  "rulesElMetadata" : null,
+  "elCatalog" : null,
+  "runtimeConfigs" : null,
+  "stageIcons" : { }
+}
+}
