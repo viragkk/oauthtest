@@ -1,0 +1,16 @@
+{
+"pipelineConfig": {
+  "pipeline" : "PIPELINE",
+  "metadata" : {
+    "dpm.pipeline.rules.id" : "82058453-7743-4dab-95da-af326e6ff4f7:testCreateRemoveTags",
+    "dpm.pipeline.id" : "80513656-09a4-482a-ae3a-86663989fddb:testCreateRemoveTags",
+    "dpm.base.url" : "http://localhost:18631",
+    "dpm.pipeline.commit.id" : "912b363a-3e8d-45dd-82f0-811c31ebcdfc:testCreateRemoveTags",
+    "dpm.pipeline.version" : "1"
+  }
+},
+"pipelineRules": {
+  "rules" : "RULES"
+},
+"libraryDefinitions": libDefs
+}
