@@ -1,0 +1,16 @@
+{
+"pipelineConfig": {
+  "metadata" : {
+    "labels" : [ "parent/child1", "parent/child2" ],
+    "dpm.base.url" : "http://localhost:18631",
+    "dpm.pipeline.id" : "bb31f413-8b23-46fc-9881-3d0e16f081c7:testPipelineLabels",
+    "dpm.pipeline.commit.id" : "4f35227a-7d54-4c3e-94c6-34ee4020ce8f:testPipelineLabels",
+    "dpm.pipeline.rules.id" : "78fe1a09-e7d0-4758-9dd5-e58119d4df30:testPipelineLabels",
+    "dpm.pipeline.version" : "1"
+  }
+},
+"pipelineRules": {
+  "rules" : "RULES"
+},
+"libraryDefinitions": libDefs
+}
