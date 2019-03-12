@@ -1,0 +1,251 @@
+{
+"pipelineConfig": {
+  "schemaVersion" : 5,
+  "version" : 1,
+  "fragmentId" : "fragment1aa7ad856-00a6-49fb-8f0d-d593f052d01a",
+  "fragmentInstanceId" : "fragment1_01",
+  "uuid" : "a5fd7812-94ff-4cf0-9834-017a947a370b",
+  "title" : "fragment1",
+  "description" : "",
+  "configuration" : [ {
+    "name" : "executionMode",
+    "value" : "STANDALONE"
+  }, {
+    "name" : "constants",
+    "value" : [ ]
+  } ],
+  "uiInfo" : {
+    "fragmentStageConfiguration" : {
+      "instanceName" : "FragmentProcessor_01",
+      "library" : "streamsets-datacollector-basic-lib",
+      "stageName" : "com_streamsets_pipeline_stage_processor_fragment_FragmentProcessor",
+      "stageVersion" : "1",
+      "configuration" : [ {
+        "name" : "conf.fragmentId"
+      }, {
+        "name" : "conf.fragmentInstanceId"
+      } ],
+      "uiInfo" : {
+        "label" : "Fragment Processor 1",
+        "description" : "",
+        "xPos" : 720,
+        "yPos" : 50,
+        "stageType" : "PROCESSOR",
+        "outputStreamLabels" : null,
+        "rawSource" : null,
+        "firstStageInstanceName" : "DevIdentity_01"
+      },
+      "inputLanes" : [ ],
+      "outputLanes" : [ "DevIdentity_02OutputLane15247688999700" ],
+      "eventLanes" : [ ],
+      "services" : [ ]
+    }
+  },
+  "stages" : [ {
+    "instanceName" : "DevIdentity_01",
+    "library" : "streamsets-datacollector-dev-lib",
+    "stageName" : "com_streamsets_pipeline_stage_processor_identity_IdentityProcessor",
+    "stageVersion" : "1",
+    "configuration" : [ {
+      "name" : "stageOnRecordError",
+      "value" : "TO_ERROR"
+    }, {
+      "name" : "stageRequiredFields",
+      "value" : [ ]
+    }, {
+      "name" : "stageRecordPreconditions",
+      "value" : [ ]
+    } ],
+    "services" : [ ],
+    "uiInfo" : {
+      "outputStreamLabels" : null,
+      "yPos" : 50,
+      "stageType" : "PROCESSOR",
+      "rawSource" : null,
+      "description" : "",
+      "label" : "Dev Identity 1",
+      "xPos" : 60
+    },
+    "inputLanes" : [ ],
+    "outputLanes" : [ "DevIdentity_01OutputLane15247688991620" ],
+    "eventLanes" : [ ]
+  }, {
+    "instanceName" : "DevRandomError_01",
+    "library" : "streamsets-datacollector-dev-lib",
+    "stageName" : "com_streamsets_pipeline_stage_devtest_RandomErrorProcessor",
+    "stageVersion" : "2",
+    "configuration" : [ {
+      "name" : "discardSomeRecords",
+      "value" : false
+    }, {
+      "name" : "stageOnRecordError",
+      "value" : "TO_ERROR"
+    }, {
+      "name" : "stageRequiredFields",
+      "value" : [ ]
+    }, {
+      "name" : "stageRecordPreconditions",
+      "value" : [ ]
+    } ],
+    "services" : [ ],
+    "uiInfo" : {
+      "outputStreamLabels" : null,
+      "yPos" : 50,
+      "stageType" : "PROCESSOR",
+      "rawSource" : null,
+      "description" : "",
+      "label" : "Dev Random Error 1",
+      "xPos" : 280
+    },
+    "inputLanes" : [ "DevIdentity_01OutputLane15247688991620" ],
+    "outputLanes" : [ "DevRandomError_01OutputLane15247688995780" ],
+    "eventLanes" : [ ]
+  }, {
+    "instanceName" : "DevIdentity_02",
+    "library" : "streamsets-datacollector-dev-lib",
+    "stageName" : "com_streamsets_pipeline_stage_processor_identity_IdentityProcessor",
+    "stageVersion" : "1",
+    "configuration" : [ {
+      "name" : "stageOnRecordError",
+      "value" : "TO_ERROR"
+    }, {
+      "name" : "stageRequiredFields",
+      "value" : [ ]
+    }, {
+      "name" : "stageRecordPreconditions",
+      "value" : [ ]
+    } ],
+    "services" : [ ],
+    "uiInfo" : {
+      "outputStreamLabels" : null,
+      "yPos" : 50,
+      "stageType" : "PROCESSOR",
+      "rawSource" : null,
+      "description" : "",
+      "label" : "Dev Identity 2",
+      "xPos" : 500
+    },
+    "inputLanes" : [ "DevRandomError_01OutputLane15247688995780" ],
+    "outputLanes" : [ "DevIdentity_02OutputLane15247688999700" ],
+    "eventLanes" : [ ]
+  } ],
+  "info" : {
+    "name" : "fragment1aa7ad856-00a6-49fb-8f0d-d593f052d01a",
+    "pipelineId" : "fragment1aa7ad856-00a6-49fb-8f0d-d593f052d01a",
+    "title" : "fragment1",
+    "description" : "",
+    "created" : 1524768892095,
+    "lastModified" : 1524768892095,
+    "creator" : "demo@demo",
+    "lastModifier" : "demo@demo",
+    "lastRev" : "0",
+    "uuid" : "a5fd7812-94ff-4cf0-9834-017a947a370b",
+    "valid" : false,
+    "metadata" : null,
+    "sdcVersion" : "3.3.0.0-SNAPSHOT",
+    "sdcId" : "87ebafcd-4963-11e8-b41f-5556fd9bb633"
+  },
+  "issues" : {
+    "pipelineIssues" : [ ],
+    "stageIssues" : { },
+    "issueCount" : 0
+  },
+  "valid" : true,
+  "previewable" : false,
+  "metadata" : {
+    "dpm.pipeline.rules.id" : "f574f406-9caf-4ef5-b6b9-561e92d3835a:testPipelineWithFragment",
+    "dpm.pipeline.id" : "94936068-3710-478a-bf80-956e3bfa90c3:testPipelineWithFragment",
+    "dpm.base.url" : "http://localhost:18631",
+    "dpm.pipeline.version" : "1",
+    "dpm.pipeline.commit.id" : "2f25490b-08e8-4a75-9176-09a85e0a8c5b:testPipelineWithFragment",
+    "labels" : [ "Processors" ]
+  },
+  "fragments" : [ ],
+  "testOriginStage" : null
+},
+"pipelineRules": {
+  "schemaVersion" : null,
+  "version" : "2",
+  "metricsRuleDefinitions" : [ ],
+  "dataRuleDefinitions" : [ ],
+  "driftRuleDefinitions" : [ ],
+  "emailIds" : [ ],
+  "uuid" : null,
+  "ruleIssues" : [ ],
+  "configuration" : [ ],
+  "configIssues" : [ ]
+},
+"libraryDefinitions": {
+  "pipeline" : null,
+  "pipelineFragment" : [ {
+    "configGroupDefinition" : {
+      "classNameToGroupsMap" : {
+        "com.streamsets.datacollector.config.PipelineFragmentGroups" : [ "PARAMETERS" ]
+      },
+      "groupNameToLabelMapList" : [ {
+        "name" : "PARAMETERS",
+        "label" : "Parameters"
+      } ]
+    },
+    "configDefinitions" : [ {
+      "name" : "executionMode",
+      "type" : "MODEL",
+      "defaultValue" : "STANDALONE",
+      "label" : "Execution Mode",
+      "mode" : "text/plain",
+      "required" : true,
+      "elDefs" : null,
+      "elFunctionDefinitionsIdx" : [ ],
+      "elConstantDefinitionsIdx" : [ ],
+      "model" : {
+        "labels" : [ "Standalone", "Cluster Batch", "Cluster Yarn Streaming", "Cluster Mesos Streaming", "Edge" ],
+        "valuesProviderClass" : "com.streamsets.datacollector.config.ExecutionModeChooserValues",
+        "values" : [ "STANDALONE", "CLUSTER_BATCH", "CLUSTER_YARN_STREAMING", "CLUSTER_MESOS_STREAMING", "EDGE" ],
+        "configDefinitions" : null,
+        "filteringConfig" : "",
+        "modelType" : "VALUE_CHOOSER"
+      },
+      "lines" : 0,
+      "displayPosition" : 10,
+      "dependsOnMap" : { },
+      "description" : "",
+      "dependsOn" : "",
+      "triggeredByValues" : null,
+      "min" : -9223372036854776000,
+      "group" : "",
+      "evaluation" : "IMPLICIT",
+      "max" : 9223372036854776000,
+      "fieldName" : "executionMode"
+    }, {
+      "name" : "constants",
+      "type" : "MAP",
+      "defaultValue" : [ ],
+      "label" : "Parameters",
+      "mode" : "text/plain",
+      "required" : false,
+      "elDefs" : null,
+      "elFunctionDefinitionsIdx" : [ "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30", "31", "32", "33", "34", "35", "36", "37", "38", "39", "40", "41", "42", "43", "44", "45", "46", "47", "48", "49", "50", "51", "52", "53", "54" ],
+      "elConstantDefinitionsIdx" : [ "55" ],
+      "model" : null,
+      "lines" : 0,
+      "displayPosition" : 80,
+      "dependsOnMap" : { },
+      "description" : "",
+      "dependsOn" : "",
+      "triggeredByValues" : null,
+      "min" : -9223372036854776000,
+      "group" : "PARAMETERS",
+      "evaluation" : "IMPLICIT",
+      "max" : 9223372036854776000,
+      "fieldName" : "constants"
+    } ]
+  } ],
+  "pipelineRules" : [ ],
+  "stages" : [ null ],
+  "services" : null,
+  "rulesElMetadata" : null,
+  "elCatalog" : null,
+  "runtimeConfigs" : null,
+  "stageIcons" : { }
+}
+}
