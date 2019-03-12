@@ -1,0 +1,17 @@
+{
+"pipelineConfig": {
+  "pipeline" : "PIPELINE",
+  "metadata" : {
+    "dpm.pipeline.rules.id" : "a9f21ac2-e693-4088-95bf-a9c6240aebf5:testCommit",
+    "dpm.pipeline.id" : "f01a97b2-c529-47f0-bc6b-d26266bf94ad:testCommit",
+    "dpm.base.url" : "http://localhost:18631",
+    "dpm.pipeline.commit.id" : "0619c0ef-5acf-489a-9b3d-0d8396d91610:testCommit",
+    "dpm.pipeline.version" : "3"
+  },
+  "newValue" : 1552372662537
+},
+"pipelineRules": {
+  "rules" : "RULES"
+},
+"libraryDefinitions": libDefs
+}
