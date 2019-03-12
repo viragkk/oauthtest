@@ -1,0 +1,16 @@
+{
+"pipelineConfig": {
+  "pipeline" : "PIPELINE",
+  "metadata" : {
+    "dpm.pipeline.rules.id" : "1eef5401-553b-43f8-9959-39c69199d546:getLog",
+    "dpm.pipeline.id" : "684eb49d-fd2f-4af9-89b9-291792e6864e:getLog",
+    "dpm.base.url" : "http://localhost:18631",
+    "dpm.pipeline.commit.id" : "4401f696-73ea-489d-a70b-6615e4059d4c:getLog",
+    "dpm.pipeline.version" : "1"
+  }
+},
+"pipelineRules": {
+  "rules" : "RULES"
+},
+"libraryDefinitions": libDefs
+}
