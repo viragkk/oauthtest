@@ -2,15 +2,16 @@
 "pipelineConfig": {
   "pipeline" : "PIPELINE",
   "metadata" : {
-    "dpm.pipeline.rules.id" : "95674b33-82c2-411a-a77d-c5e905a7b309:testUpdateBuildStatus",
+    "dpm.pipeline.rules.id" : "74b6974b-f236-4354-9e16-965af2d48e35:testUpdateBuildStatus",
     "dpm.pipeline.id" : "e74bc032-c41f-4cbf-a5a8-09e0aae6a04b:testUpdateBuildStatus",
     "dpm.base.url" : "http://localhost:18631",
-    "dpm.pipeline.commit.id" : "71b79ba1-04cd-4fda-b67b-3211167c113c:testUpdateBuildStatus",
-    "dpm.pipeline.version" : "1"
-  }
+    "dpm.pipeline.commit.id" : "b8831b21-4f41-4692-9cdb-2be208ddeaa7:testUpdateBuildStatus",
+    "dpm.pipeline.version" : "2"
+  },
+  "newValue" : 1552372144661
 },
 "pipelineRules": {
   "rules" : "RULES"
 },
-"libraryDefinitions": libDefs0
+"libraryDefinitions": libDefs
 }
